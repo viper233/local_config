@@ -1,0 +1,19 @@
+---
+# roles/common/tasks/main.yml
+- name: Setup source.list to included extra repositories
+  template: src=sources.list.j2 
+            dest=/etc/apt/sources.list 
+            owner=root group=root mode=0644
+
+- name: Install default packges
+  apt: pkg={{ item }}
+       state={{ package_state }}
+       update_cache=yes
+       cache_valid_time=3600
+  with_items:
+    - vim
+    - tree
+    - tmux
+    - aptitude
+
+- include: update.yml

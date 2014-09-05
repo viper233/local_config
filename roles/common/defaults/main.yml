@@ -1,0 +1,3 @@
+---
+# roles/common/defaults/main.yml
+package_state: "installed"

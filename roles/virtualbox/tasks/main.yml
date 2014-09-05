@@ -1,0 +1,25 @@
+---
+# roles/virtualbox/tasks/main.yml
+# https://www.virtualbox.org/wiki/Linux_Downloads
+
+- name: Add the Virtualbox repo key
+  apt_key: url=https://www.virtualbox.org/download/oracle_vbox.asc
+           state=present
+
+- name: Add Virtualbox repo file
+  copy: content="deb http://download.virtualbox.org/virtualbox/debian {{ ubuntu_distro }} contrib"
+        dest=/etc/apt/sources.list.d/virtualbox.list
+        owner=root
+        group=root
+        mode=644
+
+- name: Install dkms for VirtualBox
+  apt: pkg=dkms
+       state={{ package_state }}
+       update_cache=yes
+       cache_valid_time=3600
+
+- name: Install Virtualbox
+  apt: pkg=virtualbox-{{ virtual_box_version }}
+       state={{ package_state }}
+       update_cache=yes

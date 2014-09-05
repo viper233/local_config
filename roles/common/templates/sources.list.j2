@@ -1,0 +1,10 @@
+# deb cdrom:[Ubuntu 14.04 LTS _Trusty Tahr_ - Release amd64 (20140417)]/ trusty main restricted
+
+# See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
+# newer versions of the distribution.
+deb http://{{ ubuntu_mirror }}/ubuntu/ {{ ubuntu_distro }} main restricted universe multiverse
+deb http://{{ ubuntu_mirror }}/ubuntu/ {{ ubuntu_distro }}-updates main restricted universe multiverse
+deb http://{{ ubuntu_mirror }}/ubuntu/ {{ ubuntu_distro }}-backports main restricted universe multiverse
+deb http://security.ubuntu.com/ubuntu {{ ubuntu_distro }}-security main restricted universe multiverse
+deb http://extras.ubuntu.com/ubuntu {{ ubuntu_distro }} main
+deb http://archive.canonical.com/ubuntu {{ ubuntu_distro }} partner

@@ -1,0 +1,16 @@
+---
+# roles/vagrant/tasks/main.yml
+- name: Check if vagrant is installed
+  shell: dpkg -l vagrant
+  ignore_errors: True
+  register: vagrant_check
+
+- name: Download vagrant deb
+  shell: wget https://dl.bintray.com/mitchellh/vagrant/vagrant_{{ vagrant_latest }}_x86_64.deb
+         creates=/tmp/vagrant_{{ vagrant_latest }}_x86_64.deb
+         chdir=/tmp
+  when: vagrant_check|failed
+
+- name: Install vagrant deb
+  apt: deb=/tmp/vagrant_{{ vagrant_latest }}_x86_64.deb
+  when: vagrant_check|failed

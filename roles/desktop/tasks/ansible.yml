@@ -1,0 +1,15 @@
+---
+# roles/desktop/tasks/ansible.yml
+- name: Install software-properties-common
+  apt: pkg={{ item }} state={{ package_state }}
+  with_items:
+    - software-properties-common
+    - python-apt
+
+- name: Add the ansible ppa
+  apt_repository: repo='ppa:ansible/ansible'
+
+- name: Install the latest Ansible
+  apt: pkg=ansible
+       update_cache=yes
+       state=latest

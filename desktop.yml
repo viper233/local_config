@@ -1,0 +1,11 @@
+---
+# desktop.yml
+- hosts: desktop
+  user: root
+  roles:
+    - common
+    - ansible
+    - desktop
+    - docker
+    - virtualbox
+    - vagrant

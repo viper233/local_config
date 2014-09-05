@@ -1,0 +1,3 @@
+---
+# roles/virtualbox/defaults/main.yml
+virtual_box_version: "4.3"
