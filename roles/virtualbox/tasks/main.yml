@@ -23,3 +23,6 @@
   apt: pkg=virtualbox-{{ virtual_box_version }}
        state={{ package_state }}
        update_cache=yes
+
+# https://www.virtualbox.org/wiki/Downloads
+# http://download.virtualbox.org/virtualbox/4.1.32/Oracle_VM_VirtualBox_Extension_Pack-4.1.34-95024.vbox-extpack
