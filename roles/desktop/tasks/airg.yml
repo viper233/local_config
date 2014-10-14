@@ -3,3 +3,5 @@
 - name: Install openvpn
   apt: pkg=network-manager-openvpn
        state=installed
+
+- include hipchat.yml

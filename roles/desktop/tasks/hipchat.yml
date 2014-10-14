@@ -1,0 +1,18 @@
+---
+# roles/desktop/tasks/hipchat.yml
+
+- name: Set up sources list file
+  apt_repository: repo='deb http://downloads.hipchat.com/linux/apt stable main'
+                  state=present
+
+- name: Add hipchat apt repository key
+  apt_key: url=https://www.hipchat.com/keys/hipchat-linux.key
+           state=present
+
+- name: Apt update cache
+  apt: update_cache=yes
+
+- name: Install Atlassian hipchat
+  apt: name=hipchat
+       state=latest
+
