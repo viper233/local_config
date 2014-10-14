@@ -1,0 +1,27 @@
+---
+# roles/nvidia/tasks/optimus.yml
+# http://askubuntu.com/questions/452556/how-to-set-up-nvidia-optimus-bumblebee-in-14-04
+# http://xmodulo.com/2014/08/install-configure-nvidia-optimus-driver-ubuntu.html
+
+- name: Install nvidia optimus packages
+  apt: pkg={{ item }}
+       state={{ package_state }}
+       update_cache=yes
+       cache_valid_time=3600
+  with_items:
+    - nvidia-settings
+    - nvidia-prime
+    - mesa-utils
+    - vdpau-va-driver
+
+- name: install extra repository for prime indicator
+  apt_repository: repo='ppa:nilarimogard/webupd8'
+
+- name: update apt-cache
+  apt: update_cache=yes
+
+- name: install prime indicator
+  apt: pkg=prime-indicator
+       state={{ package_state }}
+       update_cache=yes
+       cache_valid_time=3600

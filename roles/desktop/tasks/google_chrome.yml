@@ -1,0 +1,18 @@
+---
+# roles/desktop/tasks/google-chrome.yml
+- name: Check if google chrome is installed
+  shell: dpkg -l google-chrome-stable
+  register: chrome_check
+  ignore_errors: True
+
+- name: Download google chrome
+  shell: wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+         chdir=/tmp
+         creates=/tmp/google-chrome-stable_current_amd64.deb
+  when: chrome_check|failed
+
+- name: Install google chrome
+  apt: deb=/tmp/google-chrome-stable_current_amd64.deb
+       state=installed
+  when: chrome_check|failed
+

@@ -1,0 +1,14 @@
+---
+# roles/nvidia/tasks/main.yml
+# http://askubuntu.com/questions/452556/how-to-set-up-nvidia-optimus-bumblebee-in-14-04
+
+- name: Install Nvidia's nvidia package
+  apt: pkg={{ nvidia_package }}
+       state={{ package_state }}
+       update_cache=yes
+       cache_valid_time=3600
+
+
+- name: Run Optimus extras
+  include: optimus.yml
+  when: ansible_system_vendor == "Alienware"
