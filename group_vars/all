@@ -1,2 +1,4 @@
 ubuntu_mirror: "mirror.its.sfu.ca/mirror/"
 ubuntu_distro: "trusty"
+
+package_state: "installed"

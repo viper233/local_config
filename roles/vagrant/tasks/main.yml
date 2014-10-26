@@ -1,7 +1,7 @@
 ---
 # roles/vagrant/tasks/main.yml
 - name: Check if vagrant is installed
-  shell: dpkg -l vagrant
+  shell: dpkg -l vagrant | grep {{ vagrant_latest }}
   ignore_errors: True
   register: vagrant_check
 
