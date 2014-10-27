@@ -1,4 +1,5 @@
 ubuntu_mirror: "mirror.its.sfu.ca/mirror/"
-ubuntu_distro: "trusty"
+# ubuntu_distro: "trusty"
+ubuntu_distro: "utopic"
 
 package_state: "installed"
