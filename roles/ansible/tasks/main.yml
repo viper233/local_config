@@ -7,8 +7,14 @@
     - software-properties-common
     - python-apt
 
+- name: check to see if there is a ppa repository for your current ubuntu distro
+  uri: url=http://ppa.launchpad.net/ansible/ansible/ubuntu/dists/{{ ubuntu_distro }}
+  ignore_errors: True
+  register: is_distro
+
 - name: Add the ansible ppa
   apt_repository: repo='ppa:ansible/ansible'
+  when: is_distro|success
 
 - name: Install the latest Ansible
   apt: pkg=ansible

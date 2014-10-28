@@ -7,7 +7,7 @@
            state=present
 
 - name: Add Virtualbox repo file
-  copy: content="deb http://download.virtualbox.org/virtualbox/debian {{ ubuntu_distro }} contrib"
+  copy: content="deb http://download.virtualbox.org/virtualbox/debian {{ vb_ubuntu_distro }} contrib"
         dest=/etc/apt/sources.list.d/virtualbox.list
         owner=root
         group=root

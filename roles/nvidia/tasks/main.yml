@@ -9,6 +9,6 @@
        cache_valid_time=3600
 
 
-- name: Run Optimus extras
+- name: Run extra Optimus playbook
   include: optimus.yml
   when: ansible_system_vendor == "Alienware"

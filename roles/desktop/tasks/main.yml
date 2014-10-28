@@ -20,4 +20,4 @@
     - subversion-tools
     - google-chrome-stable
 
-- include: airg.yml
+- include: work_req.yml
