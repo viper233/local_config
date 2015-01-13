@@ -20,5 +20,6 @@
     - subversion-tools
     - google-chrome-stable
     - ack-grep
+    - libxpathselect-dev
 
 - include: work_req.yml
