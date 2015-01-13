@@ -15,5 +15,6 @@
     - tree
     - tmux
     - aptitude
+    - openssh-server
 
 - include: update.yml

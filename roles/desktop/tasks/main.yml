@@ -19,5 +19,6 @@
     - git-svn 
     - subversion-tools
     - google-chrome-stable
+    - ack-grep
 
 - include: work_req.yml
