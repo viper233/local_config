@@ -10,3 +10,4 @@
     - virtualbox
     - vagrant
     - nvidia
+#    - logstash

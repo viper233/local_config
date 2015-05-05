@@ -1,2 +1,8 @@
 [desktop]
 babyone
+
+[centos7]
+10.0.0.14
+
+[gina]
+10.0.0.6

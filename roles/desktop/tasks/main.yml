@@ -21,5 +21,7 @@
     - google-chrome-stable
     - ack-grep
     - libxpathselect-dev
+    - gnote
+    - curl
 
 - include: work_req.yml
