@@ -4,6 +4,7 @@
 - name: Set up sources list file
   apt_repository: repo='deb http://downloads.hipchat.com/linux/apt stable main'
                   state=present
+  register: repo_change
 
 - name: Add hipchat apt repository key
   apt_key: url=https://www.hipchat.com/keys/hipchat-linux.key
@@ -11,6 +12,7 @@
 
 - name: Apt update cache
   apt: update_cache=yes
+  when: repo_change|success
 
 - name: Install Atlassian hipchat
   apt: name=hipchat

@@ -23,5 +23,8 @@
     - libxpathselect-dev
     - gnote
     - curl
+    - sysstat
 
 - include: work_req.yml
+
+- include: sublime.yml
