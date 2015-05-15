@@ -18,3 +18,7 @@
 - name: Install pyplates
   pip: name=cfn-pyplates
        state=present
+
+- name: Install elastic beanstalk aws cli
+  pip: name=awsebcli
+       state=present
