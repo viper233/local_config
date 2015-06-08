@@ -1,0 +1,16 @@
+---
+# roles/desktop/tasks/sublime.yml
+# http://www.webupd8.org/2013/07/sublime-text-3-ubuntu-ppa-now-available.html
+
+- name: Set up sources list file for sublime text editor
+  apt_repository: repo='ppa:webupd8team/sublime-text-3'
+  register: repo_change
+
+- name: Apt update cache
+  apt: update_cache=yes
+  when: repo_change|success
+
+- name: Install sublime text installer
+  apt: name=sublime-text-installer
+       state=latest
+
