@@ -12,4 +12,5 @@
     - nvidia
     - aws
     - packer
+    - zoom
 #    - logstash

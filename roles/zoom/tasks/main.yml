@@ -1,0 +1,18 @@
+---
+# tasks file for zoom
+#
+
+- name: Download Zoom deb package
+  get_url: url=https://zoom.us/client/latest/ZoomInstaller_i386.deb
+           dest=/tmp/ZoomInstaller_i386.deb
+
+- name: Install library dependencies for Zoom
+  apt: name={{ item }}
+       state=present
+       with_items:
+         - libxcb-randr0
+         - libxcb-randr0:i386
+
+- name: Install Zoom
+  apt: deb=/tmp/ZoomInstaller_i386.deb
+
