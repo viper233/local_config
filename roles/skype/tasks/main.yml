@@ -1,0 +1,6 @@
+---
+# tasks file for skype
+
+- name: Install skype
+  apt: name=skype
+       state=present
