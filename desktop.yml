@@ -11,4 +11,5 @@
     - vagrant
     - nvidia
     - aws
+    - packer
 #    - logstash
