@@ -17,6 +17,7 @@
     - git-gui 
     - gitk 
     - git-svn 
+    - gns3
     - subversion-tools
     - google-chrome-stable
     - ack-grep

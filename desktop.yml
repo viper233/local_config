@@ -12,5 +12,6 @@
     - nvidia
     - aws
     - packer
+    - ateoto.terraform
     - zoom
 #    - logstash
