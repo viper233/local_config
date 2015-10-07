@@ -2,17 +2,24 @@
 # vars file for aws
 
 aws_deb_packages: 
- - awscli
- - aws-status
- - ec2-ami-tools
- - ec2-api-tools
- - elasticache
- - euca2ools
- - python-boto
- - python-awsauth
- - python-fs-plugin-s3
- - ascli
- - rdscli
- - s3cmd
- - s3ql
- - s3curl
+  - awscli
+  - aws-status
+  - ec2-ami-tools
+  - ec2-api-tools
+  - elasticache
+  - euca2ools
+  - python-boto
+  - python-awsauth
+  - python-fs-plugin-s3
+  - python2.7-dev
+  - python3-dev
+  - ascli
+  - rdscli
+  - s3cmd
+  - s3ql
+  - s3curl
+
+aws_pip_packages: 
+  - awsebcli
+  - boto3
+  - cfn-pyplates

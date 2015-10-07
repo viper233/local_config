@@ -6,19 +6,11 @@
        state=present
   with_items: "{{ aws_deb_packages }}"
 
-- name: Install pip for pyplates packages
+- name: Install pip for extra python libraries
   apt: name=python-pip
        state=present
 
-# https://github.com/seandst/cfn-pyplates
-- name: pip install for pyplates
-  apt: name=python-pip
+- name: Install aws pip packages
+  pip: name={{ item }}
        state=present
-
-- name: Install pyplates
-  pip: name=cfn-pyplates
-       state=present
-
-- name: Install elastic beanstalk aws cli
-  pip: name=awsebcli
-       state=present
+  with_items: "{{ aws_pip_packages }}"
