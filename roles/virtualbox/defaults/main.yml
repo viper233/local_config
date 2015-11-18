@@ -1,4 +1,4 @@
 ---
 # roles/virtualbox/defaults/main.yml
-virtual_box_version: "4.3"
-vb_ubuntu_distro: "trusty"
+virtual_box_version: "5.0"
+vb_ubuntu_distro: "wily"

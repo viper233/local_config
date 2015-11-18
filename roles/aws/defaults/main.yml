@@ -1,2 +1,4 @@
 ---
 # defaults file for aws
+
+ecs_cli_binary: /usr/local/bin/ecs-cli

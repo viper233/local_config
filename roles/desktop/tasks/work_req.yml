@@ -5,3 +5,4 @@
        state=installed
 
 - include: hipchat.yml
+- include: slack.yml

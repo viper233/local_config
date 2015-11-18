@@ -10,9 +10,14 @@ aws_deb_packages:
   - euca2ools
   - python-boto
   - python-awsauth
+  - python-configparser
+  - python-configargparse
   - python-fs-plugin-s3
+  - python-netaddr
   - python2.7-dev
+  - python3-configargparse
   - python3-dev
+  - python3-metaconfig
   - ascli
   - rdscli
   - s3cmd

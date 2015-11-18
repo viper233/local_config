@@ -1,6 +1,7 @@
 ubuntu_mirror: "mirror.its.sfu.ca/mirror/"
 # ubuntu_distro: "trusty"
 # ubuntu_distro: "utopic"
-ubuntu_distro: "vivid"
+# ubuntu_distro: "vivid"
+ubuntu_distro: "wily"
 
 package_state: "installed"

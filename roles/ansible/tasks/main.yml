@@ -6,6 +6,7 @@
   with_items:
     - software-properties-common
     - python-apt
+    - python-psycopg2
 
 - name: check to see if there is a ppa repository for your current ubuntu distro
   uri: url=http://ppa.launchpad.net/ansible/ansible/ubuntu/dists/{{ ubuntu_distro }}
