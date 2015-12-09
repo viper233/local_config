@@ -10,8 +10,8 @@
     - virtualbox
     - vagrant
     - nvidia
-    - aws
+      #    - aws
     - packer
-      #     - ateoto.terraform
+    - ateoto.terraform
       #     - zoom
 #    - logstash

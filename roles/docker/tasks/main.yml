@@ -1,25 +1,52 @@
 ---
 # roles/docker/tasks/main.yml
-# https://docs.docker.com/installation/ubuntulinux/#ubuntu-trusty-1404-lts-64-bit
+# http://docs.docker.com/engine/installation/ubuntulinux/
 
 - name: Install apt-transport-https for docker
   apt: pkg=apt-transport-https
        update_cache=yes
        cache_valid_time=3600
 
-- name: Add the docker repo key
+- name: Remove old docker repo key
   apt_key: keyserver=hkp://keyserver.ubuntu.com:80
            id=36A1D7869245C8950F966E92D8576A8BA88D21E9
+           state=absent
+
+- name: Add the docker repo key
+  apt_key: keyserver=hkp://p80.pool.sks-keyservers.net:80
+           id=58118E89F3A912897C070ADBF76221572C52609D
            state=present
 
 - name: Add Docker repo file
-  copy: content="deb https://get.docker.io/ubuntu docker main"
+  copy: content="deb https://apt.dockerproject.org/repo ubuntu-{{ ubuntu_distro }} main"
         dest=/etc/apt/sources.list.d/docker.list
         owner=root
         group=root
         mode=644
 
-- name: Install docker
+- name: Remove old Debian docker
   apt: pkg=lxc-docker
+       state=absent
+
+- name: Install docker docker deb
+  apt: pkg={{ item }}
        state={{ package_state }}
        update_cache=yes
+       cache_valid_time=600
+  with_items:
+      - docker-engine
+
+- name: Add a docker group
+  group: name=docker
+         state=present
+
+- name: Enalble docker service to start on boot
+  service: name=docker
+           enabled=yes
+           state=started
+
+- name: Install docker compose
+#  command: /usr/bin/curl -L https://github.com/docker/compose/releases/download/1.5.2/docker-compose-{{ ansible_system }}-{{ ansible_machine }} > /usr/local/bin/docker-compose
+  get_url: "url=https://github.com/docker/compose/releases/download/1.5.2/docker-compose-{{ ansible_system }}-{{ ansible_machine }}
+           dest=/usr/local/bin/docker-compose
+           mode=0755"
