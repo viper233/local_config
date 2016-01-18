@@ -18,6 +18,7 @@
     - gitk 
     - git-svn 
     - gns3
+    - httpie
     - subversion-tools
     - google-chrome-stable
     - ack-grep
