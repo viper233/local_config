@@ -6,9 +6,8 @@
   register: vagrant_check
 
 - name: Download vagrant deb
-  shell: wget https://dl.bintray.com/mitchellh/vagrant/vagrant_{{ vagrant_latest }}_x86_64.deb
-         creates=/tmp/vagrant_{{ vagrant_latest }}_x86_64.deb
-         chdir=/tmp
+  get_url: url=https://releases.hashicorp.com/vagrant/{{ vagrant_latest }}/vagrant_{{ vagrant_latest }}_x86_64.deb
+           dest=/tmp/vagrant_{{ vagrant_latest }}_x86_64.deb
   when: vagrant_check|failed
 
 - name: Install vagrant deb
