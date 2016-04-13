@@ -1,6 +1,7 @@
 ---
 # roles/common/tasks/update.xml
 - name: Update the system with the latest packages
-  apt: update_cache=yes
-       upgrade=dist
-       cache_valid_time=3600
+  apt: 
+    update_cache: yes
+    upgrade: dist
+    cache_valid_time: 3600

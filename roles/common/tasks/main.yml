@@ -16,5 +16,6 @@
     - tmux
     - aptitude
     - openssh-server
+    - linux-tools-common
 
 - include: update.yml
