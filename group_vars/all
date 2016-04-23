@@ -2,6 +2,11 @@ ubuntu_mirror: "mirror.its.sfu.ca/mirror/"
 # ubuntu_distro: "trusty"
 # ubuntu_distro: "utopic"
 # ubuntu_distro: "vivid"
-ubuntu_distro: "wily"
+# ubuntu_distro: "wily"
+ubuntu_distro: "xenial"
 
 package_state: "installed"
+
+confluence_db: confluence
+confluence_db_user: confluence
+confluence_home_dir: /var/lib/confluence_home
