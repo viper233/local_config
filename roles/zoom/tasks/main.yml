@@ -1,18 +1,22 @@
 ---
 # tasks file for zoom
-#
 
 - name: Download Zoom deb package
-  get_url: url=https://zoom.us/client/latest/ZoomInstaller_amd64.deb
-           dest=/tmp/ZoomInstaller_amd64.deb
+  get_url:
+    url: https://zoom.us/client/latest/ZoomInstaller_amd64.deb
+    dest: /tmp/ZoomInstaller_amd64.deb
 
 - name: Install library dependencies for Zoom
-  apt: name={{ item }}
-       state=present
+  apt: 
+    name: "{{ item }}"
+    state: present
   with_items:
-         - libxcb-randr0
-         - libxcb-randr0:i386
+    - libxcb-randr0
+    - libxcb-randr0:i386
+    - ibus-qt4
+    - libibus-qt1
 
 - name: Install Zoom
-  apt: deb=/tmp/ZoomInstaller_amd64.deb
+  apt:
+    deb: /tmp/ZoomInstaller_amd64.deb
 
