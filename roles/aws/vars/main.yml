@@ -10,6 +10,7 @@ aws_deb_packages:
   - euca2ools
   - python-boto
   - python-awsauth
+  - python-colorama
   - python-configparser
   - python-configargparse
   - python-fs-plugin-s3

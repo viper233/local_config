@@ -1,24 +1,45 @@
 ---
 # roles/ansible/tasks/main.yml
 - name: Install software-properties-common
-  apt: pkg={{ item }}
-       state={{ package_state }}
+  apt:
+    pkg: "{{ item }}"
+    state: "{{ package_state }}"
   with_items:
     - software-properties-common
     - python-apt
     - python-psycopg2
+    - python-xmltodict
+
+- name: Ensure older apt versions of python modules are uninstalled
+  apt:
+    pkg: "{{ item }}"
+    state: absent
+  with_items:
+    - python-winrm
+    - python3-winrm
+
+- name: Install later pip versions of python modules required for Ansible
+  pip:
+    pkg: "{{ item }}"
+    state: "{{ package_state }}"
+  with_items:
+    - pywinrm
+    - azure
 
 - name: check to see if there is a ppa repository for your current ubuntu distro
-  uri: url=http://ppa.launchpad.net/ansible/ansible/ubuntu/dists/{{ ubuntu_distro }}
+  uri: 
+    url: "http://ppa.launchpad.net/ansible/ansible/ubuntu/dists/{{ ubuntu_distro }}"
   ignore_errors: True
   register: is_distro
 
 - name: Add the ansible ppa
-  apt_repository: repo='ppa:ansible/ansible'
+  apt_repository: 
+    repo: 'ppa:ansible/ansible'
   when: is_distro|success
 
 - name: Install the latest Ansible
-  apt: pkg=ansible
-       update_cache=yes
-       cache_valid_time=3600
-       state=latest
+  apt: 
+    pkg: ansible
+    update_cache: yes
+    cache_valid_time: 3600
+    state: latest
