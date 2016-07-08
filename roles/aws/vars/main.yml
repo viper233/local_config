@@ -24,8 +24,3 @@ aws_deb_packages:
   - s3cmd
   - s3ql
   - s3curl
-
-aws_pip_packages: 
-  - awsebcli
-  - boto3
-  - cfn-pyplates

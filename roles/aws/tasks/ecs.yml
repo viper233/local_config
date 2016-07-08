@@ -8,7 +8,7 @@
            dest={{ ecs_cli_binary }}
            checksum=md5:6b709a8d3a12e416fc55b4dc18754b84
 
-- name: Install ecs-cli tool
+- name: Set the permissions on the ecs_cli tool
   file: path={{ ecs_cli_binary }}
         owner=root
         group=root 

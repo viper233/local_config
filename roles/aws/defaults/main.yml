@@ -2,3 +2,9 @@
 # defaults file for aws
 
 ecs_cli_binary: /usr/local/bin/ecs-cli
+
+aws_pip_packages: 
+  - awsebcli
+  - boto3
+  - cfn-pyplates
+  - AWSIoTPythonSDK
