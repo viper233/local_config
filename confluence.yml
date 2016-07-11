@@ -25,20 +25,31 @@
     - confluence_db_user: confluence
     - confluence_db_user_pass: "{{ secret_confluence_db_user_pass }}"
     - confluence_install_dir: "/opt/atlassian/confluence-{{ confluence_version }}"
+    - confluece_plugin_dir: "{{ confluence_install_dir }}/confluence/WEB-INF/lib/"
     - confluence_base_dir: "/opt/atlassian/confluence"
     - confluence_home_dir: "/var/lib/confluence_home"
-    - mysql_db:                                 
+    - confluence_data_dir: "/var/atlassian/application-data/confluence"
+    - confluence_server_id: "BMQD-0B7X-WW2E-JT4K"
+    - confluence_license_key: "AAABLQ0ODAoPeNptkMtOwzAQRff+CktsYOEqDoE+JEvQJIuWpAUSKAsk5FoTailxIz8q+vc4TYGCW
+      Fgaee69c2bOCqfw3NWYBpiGk8vx5CrCcVLiMKDXKAEjtGyt3CoWb1VVO1AC8HkBegf64nWC0x2vH
+      e8EKNZwKBJugXV2EgwJpUh444ALK3fArHbQfxSWawuaVbw2gHy49ZI057JmxkK7AXVjtVSyWTszE
+      NsG/Uw6ScmkAGWg3Lew4A2weJnn6WM8u81Q3beeQZvOEyKfrSwo7jdIP1qp9yegIxKM0VK/cyVNP
+      +MI8fYNgfqlZwmb5g8JCabDF7JahSmZl9EdKtIF849kIzqKIhqhI5mXZ7PkV+cAvnDNGvSyejKej
+      xH6pf+f7N5pseEG/p72E0DRkkwwLAIURcDGhkTk1y3K9n5vGBoNgQCX9uICFCgzZB6P0nCf4BghX
+      JNBoc43dCOfX02f3"
+    - mysql_jdbc_download_url: "http://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-5.1.39.tar.gz"
+    - mysql_jdbc_download_md5: "c8988d4fc6e44364a2f51efe5b5139c1"
+    - mysql_databases:
         - name: "{{ confluence_db }}"
     - mysql_users:                              
         - name: "{{ confluence_db_user }}"
-          pass: "{{ confluence_db_user_pass }}"
-          priv: "confluencedb.*"
+          password: "{{ confluence_db_user_pass }}"
+          priv: "confluencedb.*:ALL"
           host: "localhost"
-
 
   roles:
 #     - geerlingguy.java
-    - bennojoy.mysql
+    - geerlingguy.mysql
 
   tasks:
     - name: install Confluence required packages
@@ -100,10 +111,24 @@
             group: 'root',
             mode: '0750' }
 
+#     - name: Print the download variables
+#       debug:
+#         var: "{{ item }}"
+#       with_items:
+#         - download_url
+#         - download_tmp
+
     - name: Pull down Confluence binary
       get_url:
-#         url: https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-5.9.8-x64.bin
         url: "{{ download_url }}"
         dest: "{{ download_tmp }}"
         validate_certs: no
         force: no
+
+# https://confluence.atlassian.com/doc/installing-confluence-on-linux-143556824.html
+# atlassian-confluence-X.Y.bin -q -varfile response.varfile
+#
+# This is where the database and licensing details are stored
+#     - name: Confluence config file
+#       template:
+#         dest: /var/atlassian/application-data/confluence/confluence.cfg.xml
