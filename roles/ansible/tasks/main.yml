@@ -10,22 +10,6 @@
     - python-psycopg2
     - python-xmltodict
 
-- name: Ensure older apt versions of python modules are uninstalled
-  apt:
-    pkg: "{{ item }}"
-    state: absent
-  with_items:
-    - python-winrm
-    - python3-winrm
-
-- name: Install later pip versions of python modules required for Ansible
-  pip:
-    pkg: "{{ item }}"
-    state: "{{ package_state }}"
-  with_items:
-    - pywinrm
-    - azure
-
 - name: check to see if there is a ppa repository for your current ubuntu distro
   uri: 
     url: "http://ppa.launchpad.net/ansible/ansible/ubuntu/dists/{{ ubuntu_distro }}"
@@ -43,3 +27,19 @@
     update_cache: yes
     cache_valid_time: 3600
     state: latest
+
+- name: Ensure older apt versions of python modules are uninstalled
+  apt:
+    pkg: "{{ item }}"
+    state: absent
+  with_items:
+    - python-winrm
+    - python3-winrm
+
+- name: Install later pip versions of python modules required for Ansible
+  pip:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  with_items:
+    - pywinrm
+    - azure
