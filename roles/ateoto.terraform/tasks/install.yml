@@ -1,17 +1,22 @@
 ---
-# - name: download and extract terraform
-#   sudo: yes
-#   unarchive: src=https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_amd64.zip
-#              dest=/usr/local/bin
-#              copy=no
+- name: Remove the older versions of terraform
+  file:
+    name: /usr/local/bin/terraform-*
+    state: absent
 
-- name: download terraform
-  get_url: url=https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_amd64.zip
-           dest=/tmp/terraform.zip
+- name: download and extract terraform
+  unarchive: 
+    src: https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_amd64.zip
+    dest: /usr/local/bin
+    copy: no
 
-- name: extract terraform
-  unarchive: src=/tmp/terraform.zip dest=/usr/local/bin copy=no
-  # Ansible 2.0 would let us do this in one step.
-
-- name: clean up zip
-  file: path=/tmp/terraform.zip state=absent
+# - name: download terraform
+#   get_url: url=https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_amd64.zip
+#            dest=/tmp/terraform.zip
+# 
+# - name: extract terraform
+#   unarchive: src=/tmp/terraform.zip dest=/usr/local/bin copy=no
+#   # Ansible 2.0 would let us do this in one step.
+# 
+# - name: clean up zip
+#   file: path=/tmp/terraform.zip state=absent
