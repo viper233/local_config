@@ -5,7 +5,7 @@ ubuntu_mirror: "mirror.its.sfu.ca/mirror/"
 # ubuntu_distro: "wily"
 ubuntu_distro: "xenial"
 
-package_state: "installed"
+package_state: "present"
 
 confluence_db: confluence
 confluence_db_user: confluence
