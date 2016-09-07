@@ -10,8 +10,9 @@
     - virtualbox
     - vagrant
     - nvidia
-      #    - aws
+    - aws
+#    - kbrebanov.golang
     - packer
     - ateoto.terraform
-      #     - zoom
+#    - zoom
 #    - logstash

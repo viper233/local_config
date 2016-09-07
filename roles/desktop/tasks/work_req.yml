@@ -6,3 +6,4 @@
 
 - include: hipchat.yml
 - include: slack.yml
+- include: slack.yml

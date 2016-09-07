@@ -2,17 +2,21 @@
 # tasks file for aws
 
 - name: Install required aws packages
-  apt: name={{ item }}
-       state=present
+  apt: 
+    name: "{{ item }}"
+    state: "{{ package_state }}"
   with_items: "{{ aws_deb_packages }}"
 
 - name: Install pip for extra python libraries
-  apt: name=python-pip
-       state=present
+  apt: 
+    name: python-pip
+    state: "{{ package_state }}"
 
 - name: Install aws pip packages
-  pip: name={{ item }}
-       state=present
+  pip: 
+    name: "{{ item }}"
+    state: "{{ package_state }}"
   with_items: "{{ aws_pip_packages }}"
+  ignore_errors: True
 
 - include: ecs.yml
