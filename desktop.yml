@@ -3,17 +3,17 @@
 - hosts: desktop
   user: root
   roles:
-      #     - common
-      #     - ansible
-      #     - desktop
-      #     - docker
-      #     - virtualbox
-      #     - vagrant
-      #     - nvidia
-      #     - aws
-      # #    - kbrebanov.golang
-      #     - packer
-      #     - ateoto.terraform
-      # #    - zoom
-      # #    - logstash
+    - common
+    - ansible
+    - desktop
+    - docker
+    - virtualbox
+    - vagrant
+    - nvidia
+    - aws
+#    - kbrebanov.golang
+    - packer
+    - ateoto.terraform
+#    - zoom
+#    - logstash
     - mattwillsher.sshd
