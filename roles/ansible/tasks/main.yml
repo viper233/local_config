@@ -9,6 +9,7 @@
     - python-apt
     - python-psycopg2
     - python-xmltodict
+    - libkrb5-dev
 
 - name: check to see if there is a ppa repository for your current ubuntu distro
   uri: 
@@ -35,6 +36,7 @@
   with_items:
     - python-winrm
     - python3-winrm
+    - pykerberos
 
 - name: Install later pip versions of python modules required for Ansible
   pip:
