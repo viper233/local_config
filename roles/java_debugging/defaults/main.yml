@@ -1,0 +1,5 @@
+---
+# defaults file for java_debugging
+
+java_debugging_apt_packages:
+ - visualvm 

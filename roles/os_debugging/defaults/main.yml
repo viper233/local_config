@@ -1,0 +1,9 @@
+---
+# defaults file for os_debugging
+
+os_debugging_apt_packages:
+  - dstat
+  - perf-tools-unstable
+  - ngrep
+  - linux-cloud-tools-generic
+  - linux-tools-generic

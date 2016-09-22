@@ -10,3 +10,10 @@ package_state: "present"
 confluence_db: confluence
 confluence_db_user: confluence
 confluence_home_dir: /var/lib/confluence_home
+
+sshd_skip_defaults: true
+sshd:
+  ClientAliveInterval: 300
+  ClientAliveCountMax: 3
+  PermitRootLogin: without-password
+  SyslogFacility: AUTHPRIV

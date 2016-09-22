@@ -1,0 +1,7 @@
+- name: Cisco required packages for anyconnect client install
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - lib32z1
+    - lib32ncurses5
