@@ -1,11 +1,19 @@
 ---
 # tasks file for aws
 
+- name: Include OS specific variables
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: define aws packages
+  set_fact:
+    aws_packages: "{{ __aws_packages|list }}"
+  when: aws_packages is not defined
+
 - name: Install required aws packages
-  apt: 
+  package: 
     name: "{{ item }}"
     state: "{{ package_state }}"
-  with_items: "{{ aws_deb_packages }}"
+  with_items: "{{ aws_packages }}"
 
 - name: Install pip for extra python libraries
   apt: 
