@@ -10,6 +10,10 @@
     - python-psycopg2
     - python-xmltodict
     - libkrb5-dev
+    - python-httplib2
+    - python3-httplib2
+    - python-nose
+    - python3-nose
 
 - name: check to see if there is a ppa repository for your current ubuntu distro
   uri: 
@@ -37,6 +41,9 @@
     - python-winrm
     - python3-winrm
     - pykerberos
+    - pyYAML
+    - jinja2
+    - six
 
 - name: Install later pip versions of python modules required for Ansible
   pip:
