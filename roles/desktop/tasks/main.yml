@@ -26,6 +26,7 @@
     - gnote
     - curl
     - sysstat
+    - acpi-call-dkms
 
 - include: work_req.yml
 
