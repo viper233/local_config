@@ -1,0 +1,5 @@
+---
+# Redhat vars file for aws
+
+aws__packages: 
+  - awscli

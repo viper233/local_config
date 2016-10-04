@@ -1,0 +1,30 @@
+---
+# Debian vars file for aws
+
+aws__packages: 
+  - awscli
+  - aws-status
+  - ec2-ami-tools
+  - ec2-api-tools
+  - elasticache
+  - euca2ools
+  - python-boto
+  - python-awsauth
+  - python-colorama
+  - python-configparser
+  - python-configargparse
+  - python-fs-plugin-s3
+  - python-netaddr
+  - python2.7-dev
+  - python3-configargparse
+  - python3-dev
+  - python3-metaconfig
+  - ascli
+  - rdscli
+  - s3cmd
+  - s3ql
+  - s3curl
+# Required for customer cloudwatch metrics
+  - libwww-perl
+  - libdatetime-perl
+  - unzip
