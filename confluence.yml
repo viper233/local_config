@@ -23,7 +23,7 @@
     - confluence_user: confluence
     - confluence_db: confluencedb
     - confluence_db_user: confluence
-    - confluence_db_user_pass: "{{ secret_confluence_db_user_pass }}"
+    - confluence_db_user_pass: "{{ vault_confluence_db_user_pass }}"
     - confluence_install_dir: "/opt/atlassian/confluence-{{ confluence_version }}"
     - confluece_plugin_dir: "{{ confluence_install_dir }}/confluence/WEB-INF/lib/"
     - confluence_base_dir: "/opt/atlassian/confluence"
