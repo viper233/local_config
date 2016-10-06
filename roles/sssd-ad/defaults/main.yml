@@ -1,0 +1,14 @@
+---
+# defaults file for sssd-ad
+
+sssd_ad_apt_packages:
+ - krb5-user
+ - samba
+ - sssd 
+ - ntp
+
+sssd_ad_domain:
+sssd_ad_short_domain:
+sssd_ad_krb_realm:
+sssd_ad_dc1:
+sssd_ad_dc2:

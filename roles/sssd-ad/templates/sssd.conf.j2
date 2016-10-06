@@ -1,0 +1,25 @@
+{{ ansible_managed }}
+[sssd]
+services = nss, pam
+config_file_version = 2
+domains = {{ sssd_ad_domain }}
+
+[domain/{{ sssd_ad_domain }}]
+id_provider = ad
+access_provider = ad
+
+# Use this if users are being logged in at /.
+# This example specifies /home/DOMAIN-FQDN/user as $HOME.  Use with pam_mkhomedir.so
+override_homedir = /home/%d/%u
+
+# Uncomment if the client machine hostname doesn't match the computer object on the DC.
+ad_hostname = SGLinux.lululemoninternal.com
+
+# Uncomment if DNS SRV resolution is not working
+ad_server = {{ sssd_ad_dc1 }}
+
+# Uncomment if the AD domain is named differently than the Samba domain
+ad_domain = {{ sssd_ad_domain }}
+
+# Enumeration is discouraged for performance reasons.
+# enumerate = true

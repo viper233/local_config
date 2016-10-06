@@ -1,0 +1,16 @@
+---
+# handlers file for sssd-ad
+- name: restart_smbd 
+  service: 
+    name: smbd
+    state: restarted
+
+- name: restart_sssd 
+  service: 
+    name: sssd
+    state: restarted
+
+- name: restart_ntp
+  service: 
+    name: ntp
+    state: restarted
