@@ -21,5 +21,11 @@
     - aptitude
     - openssh-server
     - linux-tools-common
+    - apt
+
+- name: Set vim to be the default EDITOR
+  alternatives: 
+    name: editor
+    path: /usr/bin/vim.tiny
 
 - include: update.yml
