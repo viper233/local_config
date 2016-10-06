@@ -9,11 +9,12 @@
     - docker
     - virtualbox
     - vagrant
-    - nvidia
+#    - nvidia
     - aws
-#    - kbrebanov.golang
     - packer
     - ateoto.terraform
 #    - zoom
 #    - logstash
     - mattwillsher.sshd
+    - geerlingguy.java
+    - sssd-ad

@@ -4,9 +4,10 @@
 - include: google_chrome.yml
 
 - name: Install default desktop packages
-  apt: pkg={{ item }}
-       update_cache=yes
-       cache_valid_time=3600
+  apt: 
+    pkg: "{{ item }}"
+    update_cache: yes
+    cache_valid_time: 3600
   with_items:
     - gkrellm
     - gkrellm-x86info
@@ -28,6 +29,7 @@
     - sysstat
     - acpi-call-dkms
 
+
 - include: work_req.yml
 
-- include: sublime.yml
+# - include: sublime.yml
