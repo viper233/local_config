@@ -4,12 +4,14 @@
 # http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_CLI_Configuration.html
 
 - name: Install ecs-cli tool
-  get_url: url=https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-latest
-           dest={{ ecs_cli_binary }}
-           checksum=md5:6b709a8d3a12e416fc55b4dc18754b84
+  get_url:
+    url: https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-latest
+    dest: "{{ ecs_cli_binary }}"
+    checksum: "{{ ecs_cli_binary_md5 }}"
 
 - name: Set the permissions on the ecs_cli tool
-  file: path={{ ecs_cli_binary }}
-        owner=root
-        group=root 
-        mode=0755
+  file: 
+    path: "{{ ecs_cli_binary }}"
+    owner: root
+    group: root 
+    mode: 0755
