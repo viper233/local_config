@@ -9,7 +9,7 @@
     - docker
     - virtualbox
     - vagrant
-#    - nvidia
+    - nvidia
     - aws
     - packer
     - ateoto.terraform
@@ -17,4 +17,4 @@
 #    - logstash
     - mattwillsher.sshd
     - geerlingguy.java
-    - sssd-ad
+#    - sssd-ad
