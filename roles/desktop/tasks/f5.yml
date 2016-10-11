@@ -1,0 +1,4 @@
+- name: install requirements for f5 devices
+  pip:
+    name: f5-sdk
+    state: "{{ package_state }}"
