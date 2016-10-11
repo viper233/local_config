@@ -6,6 +6,7 @@ sssd_ad_apt_packages:
  - samba
  - sssd 
  - ntp
+ - cifs-utils
 
 sssd_ad_domain:
 sssd_ad_short_domain:
