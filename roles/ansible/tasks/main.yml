@@ -54,3 +54,4 @@
   with_items:
     - pywinrm
     - azure
+    - molecule
