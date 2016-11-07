@@ -1,0 +1,3 @@
+---
+# defaults file for keepass
+apt_keepass_package: keepass2
