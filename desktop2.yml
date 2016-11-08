@@ -4,21 +4,21 @@
   user: root
  
   roles:
-    - common
-    - ansible
-    - desktop
-    - docker
-    - virtualbox
-    - vagrant
+#     - common
+#     - ansible
+#     - desktop
+#     - docker
+#     - virtualbox
+#     - vagrant
 #     - nvidia
-    - aws
-    - packer
-    - ateoto.terraform
+#     - aws
+#     - packer
+#     - ateoto.terraform
 #     - zoom
 #     - logstash
 #     - mattwillsher.sshd
 #     - geerlingguy.java
-    - sssd-ad
+#     - sssd-ad
 #     - webex
 #     - keepass
-    - igor_mukhin.clamav 
+    - garyellis.clamav

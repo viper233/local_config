@@ -1,5 +1,0 @@
----
-- name: ClamAv | ClamTK | Install
-  apt:
-    name: clamtk
-    state: "{{ package_state }}"
