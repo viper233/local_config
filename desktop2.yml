@@ -3,9 +3,6 @@
 - hosts: desktop
   user: root
  
-  vars:
-    - clamav_clamtk_install: true
-
   roles:
     - common
     - ansible
