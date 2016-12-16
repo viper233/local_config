@@ -28,6 +28,7 @@
     - curl
     - sysstat
     - acpi-call-dkms
+    - keychain
 
 
 - include: work_req.yml
