@@ -29,6 +29,7 @@
     - sysstat
     - acpi-call-dkms
     - system-config-printer-gnome
+    - keychain
 
 
 - include: work_req.yml

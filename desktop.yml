@@ -1,7 +1,11 @@
 ---
-# desktop.yml
+# desktop2.yml
 - hosts: desktop
   user: root
+ 
+  vars:
+    - clamav_clamtk_install: true
+
   roles:
     - common
     - ansible
@@ -13,8 +17,11 @@
     - aws
     - packer
     - ateoto.terraform
-#    - zoom
-#    - logstash
+    - zoom
+#     - logstash
     - mattwillsher.sshd
-    - geerlingguy.java
-#    - sssd-ad
+#     - geerlingguy.java
+#     - sssd-ad
+#     - webex #needs work
+#     - keepass
+#     - igor_mukhin.clamav 

@@ -1,0 +1,10 @@
+---
+# defaults file for webex
+webex_apt_packages:
+  - firefox:i386
+  - libcanberra-gtk-module:i386
+  - gtk2-engines-murrine:i386
+  - libxtst6:i386
+
+jre_url: "http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jre-8u112-linux-i586.tar.gz?AuthParam=1477951588_59bd271b6af50d7ea725816097b3388e"
+working_user: stephen

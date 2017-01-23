@@ -2,8 +2,11 @@
 # roles/desktop/tasks/work_req.yml
 - name: Install openvpn
   apt: 
-    pkg: network-manager-openvpn
+    pkg: "{{ item }}"
     state: installed
+  with_items:
+    - freerdp
+    - network-manager-openvpn
 
 - include: hipchat.yml
 - include: slack.yml

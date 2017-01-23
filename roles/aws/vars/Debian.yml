@@ -7,6 +7,8 @@ __aws_packages:
   - ec2-ami-tools
   - ec2-api-tools
   - euca2ools
+  - jsonlint
+  - libghc-yaml-dev
   - python-awsauth
   - python-colorama
   - python-configparser

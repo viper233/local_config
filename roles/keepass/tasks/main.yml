@@ -1,0 +1,12 @@
+---
+# tasks file for keepass
+- name: Add the keepass ppa
+  apt_repository:
+    repo: "ppa:jtaylor/keepass"
+    update_cache: yes
+    state: present
+
+- name: Install keepass2
+  apt:
+    name: "{{ apt_keepass_package }}"
+    state: "{{ package_state }}"
