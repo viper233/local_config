@@ -13,15 +13,15 @@
     - docker
     - virtualbox
     - vagrant
-#     - nvidia
+    - nvidia
     - aws
     - packer
     - ateoto.terraform
-#     - zoom
+    - zoom
 #     - logstash
-#     - mattwillsher.sshd
+    - mattwillsher.sshd
 #     - geerlingguy.java
-    - sssd-ad
-#     - webex
+#     - sssd-ad
+#     - webex #needs work
 #     - keepass
-    - igor_mukhin.clamav 
+#     - igor_mukhin.clamav 
