@@ -1,0 +1,42 @@
+---
+# http://blog.michelemattioni.me/2016/02/09/how-to-get-webex-running-on-an-ubuntu-smoothly/
+# tasks file for webex
+- name: install required Mozilla 32bit packages
+  apt:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  with_items: "{{ webex_apt_packages }}"
+
+- name: Make a directory for storing 32bit Java
+  file:
+    path: "~{{ working_user }}/32bit"
+    state: directory
+    owner: "{{ working_user }}"
+    group: "{{ working_user_group }}"
+    mode: 0700
+
+- name: Unpack 32bit JRE
+  unarchive:
+    dest: "~{{ working_user }}/32bit"
+    owner: "{{ working_user }}"
+    group: "{{ working_user_group }}"
+#     src: "{{ jre_url }}"
+    src: jre-8u112-linux-i586.tar.gz
+    mode: 0700
+
+- name: Create a mozilla plugins directory
+  file:
+    path: "~{{ working_user }}/.mozilla/plugins"
+    owner: "{{ working_user }}"
+    group: "{{ working_user_group }}"
+    state: directory
+    mode: 0700
+
+- name: Create a link to include the jre as a mozilla plugin
+  file:
+    path: "~{{ working_user }}/.mozilla/plugins/libnpjp2.so"
+    state: link
+    src: "~{{ working_user }}/32bit/jre1.8.0_112/lib/i386/libnpjp2.so"
+    owner: "{{ working_user }}"
+    group: "{{ working_user_group }}"
+
