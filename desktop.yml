@@ -1,10 +1,11 @@
 ---
-# desktop2.yml
+# desktop.yml
 - hosts: desktop
   user: root
  
   vars:
     - clamav_clamtk_install: true
+    - ntp_timezone: "US/Pacific"
 
   roles:
     - common
@@ -25,3 +26,4 @@
 #     - webex #needs work
 #     - keepass
 #     - igor_mukhin.clamav 
+    - telusdigital.ntp
