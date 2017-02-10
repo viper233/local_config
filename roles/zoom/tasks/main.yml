@@ -3,8 +3,9 @@
 
 - name: Download Zoom deb package
   get_url:
-    url: https://zoom.us/client/latest/ZoomInstaller_amd64.deb
+    url: https://zoom.us/client/latest/zoom_amd64.deb
     dest: /tmp/ZoomInstaller_amd64.deb
+  check_mode: no
 
 - name: Install library dependencies for Zoom
   apt: 
@@ -19,4 +20,3 @@
 - name: Install Zoom
   apt:
     deb: /tmp/ZoomInstaller_amd64.deb
-
