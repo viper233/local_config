@@ -21,4 +21,5 @@
 #     - sssd-ad
 #     - webex
 #     - keepass
-    - garyellis.clamav
+#     - garyellis.clamav
+    - telusdigital.ntp

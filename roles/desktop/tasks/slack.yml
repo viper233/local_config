@@ -1,18 +1,12 @@
 ---
 # roles/desktop/tasks/slack.yml
 
-- name: Check if slack-desktop is installed
-  shell: dpkg -l slack-desktop | grep {{ slack_latest }}
-  ignore_errors: True
-  register: slack_check
+- name: Add slack deb repositiory
+  apt_repository:
+    repo: deb https://packagecloud.io/slacktechnologies/slack/debian/ jessie main
+    state: present
 
-- name: Get the Slack deb
-  get_url: 
-    url: https://slack-ssb-updates.global.ssl.fastly.net/linux_releases/slack-desktop-{{ slack_latest }}-amd64.deb
-    dest: /tmp/slack-desktop-{{ slack_latest }}-amd64.deb
-  when: slack_check|failed
-
-- name: Install slack-desktop deb
+- name: Install slack-desktop
   apt: 
-    deb: /tmp/slack-desktop-{{ slack_latest }}-amd64.deb
-  when: slack_check|failed
+    name: slack-desktop
+    state: "{{ package_state }}"
