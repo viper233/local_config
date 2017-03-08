@@ -1,12 +1,22 @@
 ---
 # roles/desktop/tasks/slack.yml
+- name: Add slack deb repo gpg key
+  apt_key:
+    url: https://packagecloud.io/slacktechnologies/slack/gpgkey
+    state: present
 
 - name: Add slack deb repositiory
   apt_repository:
     repo: deb https://packagecloud.io/slacktechnologies/slack/debian/ jessie main
     state: present
+  register: repo_change
+
+- name: Apt update cache
+  apt:
+    update_cache: yes
+  when: repo_change|success
 
 - name: Install slack-desktop
-  apt: 
+  apt:
     name: slack-desktop
     state: "{{ package_state }}"

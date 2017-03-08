@@ -1,20 +1,24 @@
 ---
 # roles/desktop/tasks/hipchat.yml
 
+- name: Add hipchat apt repository key
+  apt_key:
+    url: https://atlassian.artifactoryonline.com/atlassian/api/gpg/key/public
+    state: present
+
 - name: Set up sources list file
-  apt_repository: repo='deb http://downloads.hipchat.com/linux/apt stable main'
-                  state=present
+  apt_repository:
+    repo: "deb https://atlassian.artifactoryonline.com/atlassian/hipchat-apt-client {{ ubuntu_distro }} main"
+    state: present
   register: repo_change
 
-- name: Add hipchat apt repository key
-  apt_key: url=https://www.hipchat.com/keys/hipchat-linux.key
-           state=present
-
 - name: Apt update cache
-  apt: update_cache=yes
+  apt:
+    update_cache: yes
   when: repo_change|success
 
 - name: Install Atlassian hipchat
-  apt: name=hipchat
-       state=latest
+  apt:
+    name: hipchat4
+    state: latest
 
