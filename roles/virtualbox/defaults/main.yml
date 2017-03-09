@@ -1,7 +1,7 @@
 ---
 # roles/virtualbox/defaults/main.yml
 virtual_box_version: "5.1"
-vb_ubuntu_distro: "wily"
+vb_ubuntu_distro: "yakkety"
 virtualbox_apt_packages:
   - dkms
   - libsdl-ttf2.0-0
