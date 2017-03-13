@@ -1,0 +1,13 @@
+---
+# tasks file for pulse_client
+
+- name: Install prerequisites for pulse VPN client
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ pulse_client_apt_pre_req }}"
+
+- name: Install the pulse client
+  apt:
+    name: "{{ pulse_client_deb_package }}"
+    state: present

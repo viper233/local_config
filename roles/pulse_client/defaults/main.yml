@@ -1,0 +1,12 @@
+---
+# defaults file for pulse_client
+pulse_client_apt_pre_req:
+  - lib32z1
+  - libwebkitgtk-1.0-0:i386
+  - libproxy1:i386
+  - libproxy1-plugin-gsettings:i386
+  - libproxy1-plugin-webkit:i386
+  - libdconf1:i386
+  - dconf-gsettings-backend:i386
+
+pulse_client_deb_package: pulse-8.2R5.i386.deb
