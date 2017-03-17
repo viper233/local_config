@@ -20,4 +20,8 @@ pulse_client_apt_pre_req:
   - libwebkitgtk-1.0-0:i386
   - libjavascriptcoregtk-4.0-18:i386
   - libproxy1-plugin-webkit:i386
+  - lib32z1
+  - libglu1-mesa:i386
+  - libglu1-mesa-dev:i386
+
 pulse_client_deb_package: pulse-8.2R5.i386.deb
