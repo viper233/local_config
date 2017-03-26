@@ -28,4 +28,4 @@
 #     - igor_mukhin.clamav 
     - telusdigital.ntp
 #     - role-install-gcloud
-    - pulse_client
+#     - pulse_client

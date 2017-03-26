@@ -29,7 +29,7 @@
 
 - name: Add Docker apt repo
   apt_repository:
-    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu ubuntu {{ docker_ubuntu_distro }} stable"
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ docker_ubuntu_distro }} stable"
     filename: docker-ubuntu.list
     state: present
   register: repo_change
