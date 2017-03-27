@@ -68,6 +68,4 @@
     enabled: yes
     state: started
 
-# - name: install docker compose
-#   
-  
+- include: compose.yml

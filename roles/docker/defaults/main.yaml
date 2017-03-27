@@ -14,3 +14,7 @@ docker_required_apt_packages:
   - linux-image-extra-virtual
   - curl
   - software-properties-common
+
+docker_compose_version: 1.11.2
+docker_compose_os: "{{ lookup('pipe', 'uname -s') }}"
+docker_compose_arch: "{{ lookup('pipe', 'uname -m') }}"
