@@ -1,0 +1,28 @@
+---
+# roles/docker/tasks/main.yml
+# https://docs.docker.com/compose/install/
+
+- name: which docker_compose?
+  ignore_errors: true
+  command: which docker_compose
+  register: docker_compose_found
+  check_mode: no
+
+- name: which docker_compose!
+  shell: docker_compose --version docker-compose --version | awk {'print $3'} | sed -r 's/\,//'
+  register: current_docker_compose_version
+  when: docker_compose_found|success
+  check_mode: no
+
+- block:
+  - name: Remove previous version of docker-compose
+    file:
+      name: /usr/local/bin/docker-compose
+      state: absent
+
+  - name: install docker compose
+    get_url:
+      url: "https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-{{ docker_compose_os }}-{{ docker_compose_arch }}"
+      dest: /usr/local/bin/docker-compose
+      mode: 0755
+  when: docker_compose_found|failed or current_docker_compose_version.stdout | version_compare(docker_compose_version, '<')
