@@ -1,7 +1,14 @@
 ---
 # tasks file for minikube
 
-- name: Download the minikube binary
+- name: Download and install the kubectl binary
+  get_url:
+    url: "{{ minikube_url_kubectl }}"
+    dest: "{{ minikube_install_dest_kubectl }}"
+    owner: root
+    mode: 0755
+
+- name: Download and install the minikube binary
   get_url:
     url: "{{ minikube_url }}"
     dest: "{{ minikube_install_dest }}"
