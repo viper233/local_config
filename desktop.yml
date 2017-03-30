@@ -29,3 +29,4 @@
     - telusdigital.ntp
 #     - role-install-gcloud
 #     - pulse_client
+    - minikube

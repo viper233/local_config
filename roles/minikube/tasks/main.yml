@@ -1,0 +1,9 @@
+---
+# tasks file for minikube
+
+- name: Download the minikube binary
+  get_url:
+    url: "{{ minikube_url }}"
+    dest: "{{ minikube_install_dest }}"
+    owner: root
+    mode: 0755
