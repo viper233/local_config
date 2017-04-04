@@ -27,4 +27,4 @@
   with_items: "{{ aws_pip_packages }}"
   ignore_errors: True
 
-# - include: ecs.yml
+- include: ecs.yml

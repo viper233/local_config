@@ -1,0 +1,20 @@
+---
+# tasks file for pulse_client
+
+- name: Install prerequisites for pulse VPN client
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ pulse_client_apt_pre_req }}"
+
+# yuk, lineinfile, disgusting. Need to do better and discover the proper logic for this
+- name: Enabled i386 GL libraries
+  lineinfile:
+    name: /etc/alternatives/i386-linux-gnu_gl_conf
+    line: /usr/lib/i386-linux-gnu/mesa
+    state: present
+
+# - name: Install the pulse client
+#   apt:
+#     deb: "file:///{{ pulse_client_deb_package }}"
+#     state: present

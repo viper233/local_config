@@ -1,23 +1,10 @@
 ---
 # roles/ansible/tasks/main.yml
-- name: Install software-properties-common
+- name: Install extensive ansible prerequsites
   apt:
     pkg: "{{ item }}"
     state: "{{ package_state }}"
-  with_items:
-    - software-properties-common
-    - python-apt
-    - python-psycopg2
-    - python-xmltodict
-    - libkrb5-dev
-    - python-httplib2
-    - python3-httplib2
-    - python-nose
-    - python3-nose
-    - python-pip
-    - python3-pip
-    - python-pyvmomi
-    - python3-pyvmomi
+  with_items: "{{ ansible_apt_prereq_packages }}"
 
 - name: check to see if there is a ppa repository for your current ubuntu distro
   uri: 
@@ -41,19 +28,10 @@
   apt:
     pkg: "{{ item }}"
     state: absent
-  with_items:
-    - python-winrm
-    - python3-winrm
-    - pykerberos
-    - pyYAML
-    - jinja2
-    - six
+  with_items: "{{ ansible_apt_remove_packages }}"
 
 - name: Install later pip versions of python modules required for Ansible
   pip:
     name: "{{ item }}"
     state: "{{ package_state }}"
-  with_items:
-    - pywinrm
-    - azure
-    - molecule
+  with_items: "{{ ansible_pip_required_packages }}"

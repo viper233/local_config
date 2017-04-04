@@ -1,0 +1,31 @@
+---
+ansible_apt_remove_packages:
+  - python-winrm
+  - python3-winrm
+  - pykerberos
+  - pyYAML
+  - jinja2
+  - six
+
+ansible_pip_required_packages:
+  - pywinrm
+  - azure
+  - molecule
+
+ansible_apt_prereq_packages:
+  - software-properties-common
+  - python-apt
+  - python-psycopg2
+  - python-xmltodict
+  - libkrb5-dev
+  - python-httplib2
+  - python3-httplib2
+  - python-nose
+  - python3-nose
+  - python-pip
+  - python3-pip
+  - python-pyvmomi
+  - python3-pyvmomi
+  - yamllint
+
+ansible_version: latest

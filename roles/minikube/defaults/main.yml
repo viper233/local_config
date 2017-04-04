@@ -1,0 +1,12 @@
+---
+# defaults file for minikube
+
+minikube_platform: linux-amd64
+minikube_version: latest
+minikube_url: "https://storage.googleapis.com/minikube/releases/{{ minikube_version }}/minikube-{{ minikube_platform }}"
+minikube_install_dest: /usr/local/bin/minikube
+
+minikube_platform_kubectl: "linux/amd64"
+minikube_version_kubectl: v1.5.3
+minikube_url_kubectl: "https://storage.googleapis.com/kubernetes-release/release/{{ minikube_version_kubectl }}/bin/{{ minikube_platform_kubectl }}/kubectl"
+minikube_install_dest_kubectl: /usr/local/bin/kubectl

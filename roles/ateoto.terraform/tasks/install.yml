@@ -10,13 +10,4 @@
     dest: /usr/local/bin
     copy: no
 
-# - name: download terraform
-#   get_url: url=https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_amd64.zip
-#            dest=/tmp/terraform.zip
-# 
-# - name: extract terraform
-#   unarchive: src=/tmp/terraform.zip dest=/usr/local/bin copy=no
-#   # Ansible 2.0 would let us do this in one step.
-# 
-# - name: clean up zip
-#   file: path=/tmp/terraform.zip state=absent
+- include: landscape.yml

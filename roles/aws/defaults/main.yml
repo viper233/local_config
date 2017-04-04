@@ -3,7 +3,7 @@
 
 ecs_cli_binary: /usr/local/bin/ecs-cli
 
-ecs_cli_binary_md5: md5:43d10880e86bea64468239d711be0f3b
+ecs_cli_binary_md5: md5:ccd6a54f8e76e105f0025fb629d0a7ba
 
 aws_pip_packages: 
   - awsebcli
