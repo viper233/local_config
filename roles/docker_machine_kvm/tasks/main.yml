@@ -1,0 +1,22 @@
+---
+# tasks file for docker_machine_kvm
+# https://github.com/dhiltgen/docker-machine-kvm
+
+- name: Install required packages for docker_machine_kvm
+  apt:
+    pkg: "{{ item }}"
+    update_cache: yes
+    cache_valid_time: 3600
+  with_items: "{{ docker_machine_kvm_required_apt_packages }}"
+
+
+- name: Remove previous version of docker_machine_kvm
+  file:
+    name: "{{ docker_machine_kvm_install_dest }}"
+    state: absent
+
+- name: install docker_machine_kvm
+  get_url:
+    url: "{{ docker_machine_kvm_url }}"
+    dest: "{{ docker_machine_kvm_install_dest }}"
+    mode: 0755
