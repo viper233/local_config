@@ -8,7 +8,7 @@
   check_mode: no
 
 - name: which minikube!
-  shell: minikube --version | awk {'print $3'}
+  shell: minikube version | awk {'print $3'}
   register: current_minikube_version
   when: minikube_found|success
   check_mode: no
