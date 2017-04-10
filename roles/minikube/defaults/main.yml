@@ -2,7 +2,7 @@
 # defaults file for minikube
 
 minikube_platform: linux-amd64
-minikube_version: latest
+minikube_version: v0.17.1
 minikube_url: "https://storage.googleapis.com/minikube/releases/{{ minikube_version }}/minikube-{{ minikube_platform }}"
 minikube_install_dest: /usr/local/bin/minikube
 

@@ -1,16 +1,34 @@
 ---
 # tasks file for minikube
 
+- name: which minikube?
+  ignore_errors: true
+  command: which minikube
+  register: minikube_found
+  check_mode: no
+
+- name: which minikube!
+  shell: minikube --version | awk {'print $3'}
+  register: current_minikube_version
+  when: minikube_found|success
+  check_mode: no
+
+- block:
+  - name: Remove previous version of minikube
+    file:
+      name: "{{ minikube_install_dest }}"
+      state: absent
+
+  - name: install minikube
+    get_url:
+      url: "{{ minikube_url }}"
+      dest: "{{ minikube_install_dest }}"
+      mode: 0755
+  when: minikube_found|failed or current_minikube_version.stdout | version_compare(minikube_version, '<')
+
 - name: Download and install the kubectl binary
   get_url:
     url: "{{ minikube_url_kubectl }}"
     dest: "{{ minikube_install_dest_kubectl }}"
-    owner: root
-    mode: 0755
-
-- name: Download and install the minikube binary
-  get_url:
-    url: "{{ minikube_url }}"
-    dest: "{{ minikube_install_dest }}"
     owner: root
     mode: 0755
