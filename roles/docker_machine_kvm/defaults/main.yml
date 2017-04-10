@@ -1,0 +1,10 @@
+---
+# defaults file for docker_machine_kvm
+
+docker_machine_kvm_required_apt_packages: 
+  - qemu-kvm
+  - libvirt-bin
+
+docker_machine_kvm_version: v0.8.2
+docker_machine_kvm_url: "https://github.com/dhiltgen//docker_machine_kvm/releases/{{ docker_machine_kvm_version }}/docker-machine-driver-kvm"
+docker_machine_kvm_install_dest: /usr/local/bin/docker-machine-driver-kvm
