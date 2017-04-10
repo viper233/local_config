@@ -30,3 +30,4 @@
 #     - role-install-gcloud
 #     - pulse_client
     - minikube
+    - docker_machine_kvm
