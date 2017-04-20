@@ -1,0 +1,4 @@
+---
+# defaults file for dosullivan.kops
+kops_version: "1.4.4"
+kops_install_dest: /usr/local/bin/kops

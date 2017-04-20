@@ -1,0 +1,31 @@
+---
+# tasks file for dosullivan.kops
+
+- name: Is kops is installed
+  command: which kops
+  ignore_errors: true
+  register: kops_installed
+  check_mode: no
+
+- name: Which version of kops is installed
+  shell: kops -version | awk {'print $2'}
+  register: current_kops_version
+  when: kops_installed|success
+  check_mode: no
+
+- block:
+  - name: Remove the previously installed version
+    file:
+      name: "{{ kops_install_dest }}"
+      state: absent
+    when: kops_installed|success
+
+  - name: Download kops
+    get_url:
+      url: https://github.com/kubernetes/kops/releases/download/v{{ kops_version }}/kops-linux-amd64
+      dest: "{{ kops_install_dest }}"
+      owner: root
+      group: root
+      mode: 0755
+
+  when: kops_installed|failed or current_kops_version.stdout | version_compare(kops_version, '<')
