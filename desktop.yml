@@ -19,7 +19,7 @@
     - packer
     - ateoto.terraform
     - zoom
-#     - logstash
+# #     - logstash
     - mattwillsher.sshd
 #     - geerlingguy.java
 #     - sssd-ad
@@ -28,6 +28,7 @@
 #     - igor_mukhin.clamav 
     - telusdigital.ntp
 #     - role-install-gcloud
-#     - pulse_client
+    - pulse_client
     - minikube
-    - docker_machine_kvm
+#     - docker_machine_kvm
+#     - dosullivan.kops

@@ -14,7 +14,23 @@
     line: /usr/lib/i386-linux-gnu/mesa
     state: present
 
+- name: Enabled i386 eGL libraries
+  lineinfile:
+    name: /etc/alternatives/i386-linux-gnu_egl_conf
+    line: /usr/lib/i386-linux-gnu/mesa-egl
+    state: present
+
 # - name: Install the pulse client
 #   apt:
 #     deb: "file:///{{ pulse_client_deb_package }}"
 #     state: present
+
+
+- name: Add pulse directory to library path
+  template:
+    name: etc/ld.so.conf.d/pulse.conf.j2
+    dest: /etc/ld.so.conf.d/pulse.conf
+    mode: 0755
+    owner: root
+    group: root
+  notify: link libraries

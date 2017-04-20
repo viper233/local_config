@@ -1,2 +1,5 @@
 ---
 # handlers file for pulse_client
+
+- name: link libraries
+  shell: "/bin/ldconfig"
