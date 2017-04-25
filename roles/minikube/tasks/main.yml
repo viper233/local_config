@@ -1,13 +1,13 @@
 ---
 # tasks file for minikube
 
-- name: which minikube?
+- name: Is minikube installed?
   ignore_errors: true
   command: which minikube
   register: minikube_found
   check_mode: no
 
-- name: which minikube!
+- name: What is the current version of minikube
   shell: minikube version | awk {'print $3'}
   register: current_minikube_version
   when: minikube_found|success
@@ -26,9 +26,40 @@
       mode: 0755
   when: minikube_found|failed or current_minikube_version.stdout | version_compare(minikube_version, '<')
 
-- name: Download and install the kubectl binary
-  get_url:
-    url: "{{ minikube_url_kubectl }}"
-    dest: "{{ minikube_install_dest_kubectl }}"
-    owner: root
-    mode: 0755
+- name: Is kubectl installed?
+  ignore_errors: true
+  command: which kubectl
+  register: kubectl_found
+  check_mode: no
+
+- name: What is the current version of kubectl installed?
+  shell: kubectl version | grep Client | awk {'print $5'} | sed 's/"//g' | sed 's/GitVersion\://g' | sed 's/\,//g'
+  register: current_kubectl_version
+  when: kubectl_found|success
+  check_mode: no
+
+- name: Findout the current stable version
+  shell: curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt
+  register: current_stable_kube_ctl
+  check_mode: no
+
+  # - name: set current version to stable if not set
+  #   set_fact:
+  #     minikube_kubectl_version: "{{ current_stable_kube_ctl.std_out }}"
+  #   when: minikube_kubectl_version is not set
+  #   check_mode: no
+
+- block:
+  - name: Remove previous version of kubectl
+    file:
+      name: "{{ minikube_install_dest_kubectl }}"
+      state: absent
+
+  - name: Download and install the kubectl binary
+    get_url:
+      url: "{{ minikube_url_kubectl }}"
+      dest: "{{ minikube_install_dest_kubectl }}"
+      owner: root
+      mode: 0755
+
+  when: kubectl_found|failed or current_kubectl_version.stdout | version_compare(minikube_kubectl_version, '<')
