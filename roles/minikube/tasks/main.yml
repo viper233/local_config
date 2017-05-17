@@ -43,11 +43,15 @@
   register: current_stable_kube_ctl
   check_mode: no
 
-  # - name: set current version to stable if not set
-  #   set_fact:
-  #     minikube_kubectl_version: "{{ current_stable_kube_ctl.std_out }}"
-  #   when: minikube_kubectl_version is not set
-  #   check_mode: no
+- name: debug current_stable_kube_ctl
+  debug:
+    var: current_stable_kube_ctl.stdout
+
+- name: set current version to stable if not set
+  set_fact:
+    minikube_kubectl_version: "{{ current_stable_kube_ctl.stdout }}"
+  when: minikube_kubectl_version is not defined
+  check_mode: no
 
 - block:
   - name: Remove previous version of kubectl

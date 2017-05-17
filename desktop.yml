@@ -9,16 +9,16 @@
 
   roles:
     - common
-    - ansible
-    - desktop
-    - docker
-    - virtualbox
-    - vagrant
-    - nvidia
-    - aws
-    - packer
-    - ateoto.terraform
-    - zoom
+#     - ansible
+#     - desktop
+#     - docker
+#     - virtualbox
+#     - vagrant
+#     - nvidia
+#     - aws
+#     - packer
+#     - ateoto.terraform
+#     - zoom
 # #     - logstash
     - mattwillsher.sshd
 #     - geerlingguy.java
@@ -28,7 +28,7 @@
 #     - igor_mukhin.clamav 
     - telusdigital.ntp
 #     - role-install-gcloud
-    - pulse_client
+#     - pulse_client
     - minikube
 #     - docker_machine_kvm
 #     - dosullivan.kops
