@@ -1,15 +1,15 @@
 [desktop]
 babyone
 
-[centos7]
-10.0.0.14
-
-[gina]
-10.0.0.6
-
 [cassandra]
 pinky
 brain
 meatball
 frylock
 shakes
+
+[dns]
+172.16.0.12
+
+[ubuntu]
+172.16.0.15
