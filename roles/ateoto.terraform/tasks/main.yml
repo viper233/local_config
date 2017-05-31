@@ -13,4 +13,4 @@
   check_mode: no
 
 - include: install.yml
-  when: terraform_found|failed or current_terraform_version.stdout | version_compare(terraform_version, '<')
+  when: terraform_found|failed or current_terraform_version.stdout | version_compare(terraform_version, '!=')

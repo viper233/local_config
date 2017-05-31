@@ -17,7 +17,7 @@
 #     - nvidia
 #     - aws
 #     - packer
-#     - ateoto.terraform
+    - ateoto.terraform
 #     - zoom
 # #     - logstash
     - mattwillsher.sshd
@@ -31,4 +31,4 @@
 #     - pulse_client
     - minikube
 #     - docker_machine_kvm
-#     - dosullivan.kops
+    - dosullivan.kops
