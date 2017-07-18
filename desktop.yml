@@ -13,10 +13,10 @@
 #     - desktop
 #     - docker
 #     - virtualbox
-#     - vagrant
+    - vagrant
 #     - nvidia
 #     - aws
-#     - packer
+    - packer
     - ateoto.terraform
 #     - zoom
 # #     - logstash
@@ -31,4 +31,4 @@
 #     - pulse_client
     - minikube
 #     - docker_machine_kvm
-    - dosullivan.kops
+#     - dosullivan.kops
