@@ -6,6 +6,10 @@
   vars:
     - clamav_clamtk_install: true
     - ntp_timezone: "US/Pacific"
+    - vault_app: vault
+    - vault_app_ver: '0.7.3'
+    - vault_app_checksums:
+        linux_amd64: sha256:2822164d5dd347debae8b3370f73f9564a037fc18e9adcabca5907201e5aab45
 
   roles:
     - common
@@ -18,6 +22,7 @@
 #     - aws
     - packer
     - ateoto.terraform
+    - andrewrothstein.vault-app
 #     - zoom
 # #     - logstash
     - mattwillsher.sshd
