@@ -8,7 +8,7 @@
   check_mode: no
 
 - name: Which version of kops is installed
-  shell: kops -version | awk {'print $2'}
+  shell: kops version | awk {'print $2'}
   register: current_kops_version
   when: kops_installed|success
   check_mode: no
