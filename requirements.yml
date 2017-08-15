@@ -2,6 +2,10 @@
 
 - src: geerlingguy.docker
 
+- src: geerlingguy.ansible
+
 - src: telusdigital.ntp
 
 - src: andrewrothstein.vault-app
+
+- src: cmprescott.chrome

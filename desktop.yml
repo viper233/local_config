@@ -37,3 +37,4 @@
     - minikube
 #     - docker_machine_kvm
     - dosullivan.kops
+    - cmprescott.chrome
