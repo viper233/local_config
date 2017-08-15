@@ -7,5 +7,7 @@
 - src: telusdigital.ntp
 
 - src: andrewrothstein.vault-app
+- src: andrewrothstein.kubectl
+- src: andrewrothstein.minikube
 
 - src: cmprescott.chrome
