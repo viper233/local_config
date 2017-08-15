@@ -23,6 +23,9 @@
     - subversion-tools
     - google-chrome-stable
     - ack-grep
+    - atop
+    - htop
+    - meld
     - libxpathselect-dev
     - gnote
     - curl
