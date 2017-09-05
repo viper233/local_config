@@ -24,6 +24,7 @@
       url: "{{ minikube_url }}"
       dest: "{{ minikube_install_dest }}"
       mode: 0755
+      checksum: "sha256:{{ minikube_checksum }}"
   when: minikube_found|failed or current_minikube_version.stdout | version_compare(minikube_version, '<')
 
 - name: Is kubectl installed?
