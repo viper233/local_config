@@ -33,6 +33,7 @@
     - acpi-call-dkms
     - system-config-printer-gnome
     - keychain
+    - shellcheck
 
 
 - include: work_req.yml
