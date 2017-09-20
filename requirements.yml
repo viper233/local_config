@@ -11,3 +11,4 @@
 - src: andrewrothstein.minikube
 
 - src: cmprescott.chrome
+# - src: DataDog.ansible-datadog

@@ -11,4 +11,5 @@ aws_pip_packages:
   - botocore
   - boto3
   - cfn-pyplates
+  - cfn_flip
   - AWSIoTPythonSDK
