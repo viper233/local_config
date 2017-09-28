@@ -35,6 +35,9 @@
     - keychain
     - virtualenv
     - dos2unix
+    - shellcheck
+    - python-argcomplete
+    - python3-argcomplete
 
 
 - include: work_req.yml
