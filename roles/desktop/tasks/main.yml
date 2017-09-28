@@ -33,6 +33,8 @@
     - acpi-call-dkms
     - system-config-printer-gnome
     - keychain
+    - virtualenv
+    - dos2unix
 
 
 - include: work_req.yml
