@@ -5,7 +5,8 @@ ubuntu_mirror: "mirror.its.sfu.ca/mirror/"
 # ubuntu_distro: "wily"
 # ubuntu_distro: "xenial"
 # ubuntu_distro: "yakkety"
-ubuntu_distro: "zesty"
+# ubuntu_distro: "zesty"
+ubuntu_distro: "artful"
 
 package_state: "present"
 

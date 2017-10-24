@@ -38,4 +38,4 @@
 #     - docker_machine_kvm
     - dosullivan.kops
     - cmprescott.chrome
-    - suzuki-shunsuke.gcloud-ubuntu
+#    - suzuki-shunsuke.gcloud-ubuntu
