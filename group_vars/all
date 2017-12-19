@@ -20,11 +20,3 @@ sshd:
   ClientAliveCountMax: 3
   PermitRootLogin: without-password
   SyslogFacility: AUTHPRIV
-
-sssd_ad_domain: LULULEMONINTERNAL.COM
-sssd_ad_short_domain: LULULEMONINTERNAL.COM
-
-sssd_ad_dc1: lun-dc-01.lululemoninternal.com
-sssd_ad_dc2: lun-dc-02.lululemoninternal.com
-sssd_ad_krb_realm: LULULEMONINTERNAL.COM
-sssd_ad_realm: "{{ sssd_ad_krb_realm }}"
