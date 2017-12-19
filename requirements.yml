@@ -12,3 +12,12 @@
 
 - src: cmprescott.chrome
 # - src: DataDog.ansible-datadog
+
+- src: git@github.com:viper233/ansible-role-firefox-esr.git
+  scm: git
+  version: master
+  name: firefox-esr
+
+- src: git@github.com:malk/ansible-java8-oracle.git
+  scm: git
+  version: master

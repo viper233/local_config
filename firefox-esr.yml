@@ -1,0 +1,7 @@
+---
+- name: Install the Extend Service Release of Firefox
+  hosts: desktop
+
+  roles:
+    - firefox-esr
+    - ansible-java8-oracle
