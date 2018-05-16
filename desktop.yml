@@ -12,15 +12,15 @@
         linux_amd64: sha256:2822164d5dd347debae8b3370f73f9564a037fc18e9adcabca5907201e5aab45
 
   roles:
-    - common
+#    - common
 #     - ansible
 #     - desktop
 #     - docker
 #     - virtualbox
-    - vagrant
+#    - vagrant
 #     - nvidia
 #     - aws
-    - packer
+#    - packer
     - ateoto.terraform
     - andrewrothstein.vault-app
 #     - zoom
@@ -34,7 +34,7 @@
     - telusdigital.ntp
 #     - role-install-gcloud
 #     - pulse_client
-    - minikube
+#     - minikube
 #     - docker_machine_kvm
     - dosullivan.kops
     - cmprescott.chrome
