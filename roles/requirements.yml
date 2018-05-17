@@ -1,4 +1,4 @@
-- src: mattwillsher.sshd 
+- src: willshersystems.sshd
 
 - src: geerlingguy.docker
 
@@ -12,6 +12,8 @@
 - src: andrewrothstein.kubectl
 - src: andrewrothstein.minikube
 
+- src: andrewrothstein.terraform
+- src: andrewrothstein.packer
 
 
 - src: cmprescott.chrome
