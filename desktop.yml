@@ -6,36 +6,36 @@
   vars:
     - clamav_clamtk_install: true
     - ntp_timezone: "US/Pacific"
-    - vault_app: vault
-    - vault_app_ver: '0.7.3'
-    - vault_app_checksums:
-        linux_amd64: sha256:2822164d5dd347debae8b3370f73f9564a037fc18e9adcabca5907201e5aab45
 
   roles:
 #    - common
 #     - ansible
 #     - desktop
-#     - docker
 #     - virtualbox
-#    - vagrant
 #     - nvidia
 #     - aws
-#    - packer
-    - ateoto.terraform
     - andrewrothstein.vault-app
+    - andrewrothstein.vagrant
+    - andrewrothstein.packer
+    - andrewrothstein.terraform
+    - andrewrothstein.kubectl
+    - andrewrothstein.minikube
 #     - zoom
 # #     - logstash
-    - mattwillsher.sshd
-#     - geerlingguy.java
 #     - sssd-ad
 #     - webex #needs work
 #     - keepass
 #     - igor_mukhin.clamav 
     - telusdigital.ntp
-#     - role-install-gcloud
 #     - pulse_client
 #     - minikube
 #     - docker_machine_kvm
     - dosullivan.kops
     - cmprescott.chrome
 #    - suzuki-shunsuke.gcloud-ubuntu
+    - willshersystems.sshd
+    - geerlingguy.docker
+    - geerlingguy.ansible
+    - firefox-esr
+    - ansible-java8-oracle
+    - wtanaka.gcloud-sdk
