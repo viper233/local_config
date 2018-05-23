@@ -14,6 +14,7 @@
 
 - src: andrewrothstein.terraform
 - src: andrewrothstein.packer
+- src: andrewrothstein.vagrant
 
 
 - src: cmprescott.chrome

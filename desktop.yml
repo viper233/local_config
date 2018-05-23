@@ -14,7 +14,7 @@
 #     - virtualbox
 #     - nvidia
 #     - aws
-    - andrewrothstein.vault-app
+#     - andrewrothstein.vault-app
     - andrewrothstein.vagrant
     - andrewrothstein.packer
     - andrewrothstein.terraform
@@ -36,6 +36,6 @@
     - willshersystems.sshd
     - geerlingguy.docker
     - geerlingguy.ansible
-    - firefox-esr
-    - ansible-java8-oracle
+#     - firefox-esr
+#     - ansible-java8-oracle
     - wtanaka.gcloud-sdk
