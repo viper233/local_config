@@ -1,4 +1,4 @@
-- src: mattwillsher.sshd 
+- src: willshersystems.sshd
 
 - src: geerlingguy.docker
 
@@ -7,8 +7,14 @@
 - src: telusdigital.ntp
 
 - src: andrewrothstein.vault-app
+
+- src: dosullivan.kops
 - src: andrewrothstein.kubectl
 - src: andrewrothstein.minikube
+
+- src: andrewrothstein.terraform
+- src: andrewrothstein.packer
+
 
 - src: cmprescott.chrome
 # - src: DataDog.ansible-datadog
@@ -21,3 +27,5 @@
 - src: git@github.com:malk/ansible-java8-oracle.git
   scm: git
   version: master
+
+- src: wtanaka.gcloud-sdk
