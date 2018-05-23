@@ -23,7 +23,9 @@ __aws_packages:
   - s3cmd
   - s3ql
   - s3curl
-# Required for customer cloudwatch metrics
+  - yamllint
+  - yaml2json
+# Required for custom cloudwatch metrics
   - libwww-perl
   - libdatetime-perl
   - unzip

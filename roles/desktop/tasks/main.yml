@@ -1,7 +1,9 @@
 ---
 # roles/desktop/tasks/main.yml
 
-- include: google_chrome.yml
+- name: Include vars for the OS
+  include_vars:
+
 
 - name: Install default desktop packages
   apt: 
@@ -9,37 +11,8 @@
     update_cache: yes
     cache_valid_time: 3600
   with_items:
-    - gkrellm
-    - gkrellm-x86info
-    - vlc
-    - git 
-    - subversion 
-    - git-doc
-    - git-gui 
-    - gitk 
-    - git-svn 
-    - gns3
-    - httpie
-    - subversion-tools
-    - google-chrome-stable
-    - ack-grep
-    - atop
-    - htop
-    - meld
-    - libxpathselect-dev
-    - gnote
-    - curl
-    - sysstat
-    - acpi-call-dkms
-    - system-config-printer-gnome
-    - keychain
-    - virtualenv
-    - dos2unix
-    - shellcheck
-    - python-argcomplete
-    - python3-argcomplete
 
 
 - include: work_req.yml
 
-# - include: sublime.yml
+- include: sublime.yml
