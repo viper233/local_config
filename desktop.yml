@@ -6,6 +6,12 @@
   vars:
     - clamav_clamtk_install: true
     - ntp_timezone: "US/Pacific"
+    - vault_app: vault
+    - vault_app_ver: '0.10.1'
+    - vault_app_checksums:
+        linux_amd64: 031e521b4603487126fd353a9557dd22a02304a8a11f843e9914be59a8009c8a  
+    - virtualbox_version : 5.2.12
+
 
   roles:
 #    - common
@@ -14,12 +20,13 @@
 #     - virtualbox
 #     - nvidia
 #     - aws
-    - andrewrothstein.vault-app
+#     - andrewrothstein.vault-app #failing
     - andrewrothstein.vagrant
     - andrewrothstein.packer
     - andrewrothstein.terraform
     - andrewrothstein.kubectl
     - andrewrothstein.minikube
+    - andrewrothstein.virtualbox
 #     - zoom
 # #     - logstash
 #     - sssd-ad
