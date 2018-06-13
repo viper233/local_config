@@ -1,4 +1,0 @@
-- name: Install terraform landscape tool
-  gem:
-    name: terraform_landscape
-    state: "{{ package_state }}"

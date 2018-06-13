@@ -6,7 +6,6 @@
 
 - src: telusdigital.ntp
 
-- src: andrewrothstein.vault-app
 
 - src: dosullivan.kops
 - src: andrewrothstein.kubectl
@@ -15,6 +14,8 @@
 - src: andrewrothstein.terraform
 - src: andrewrothstein.packer
 - src: andrewrothstein.vagrant
+- src: andrewrothstein.vault-app
+- src: andrewrothstein.virtualbox
 
 
 - src: cmprescott.chrome
