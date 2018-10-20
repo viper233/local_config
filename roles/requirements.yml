@@ -6,6 +6,8 @@
 
 - src: telusdigital.ntp
 
+- src: keyboardinterrupt.sublime-text-3
+
 
 - src: dosullivan.kops
 - src: andrewrothstein.kubectl
@@ -20,14 +22,16 @@
 
 - src: cmprescott.chrome
 # - src: DataDog.ansible-datadog
+# - src; garyellis.clamav
 
 - src: git@github.com:viper233/ansible-role-firefox-esr.git
   scm: git
   version: master
   name: firefox-esr
 
-- src: git@github.com:malk/ansible-java8-oracle.git
-  scm: git
-  version: master
+# - src: git@github.com:malk/ansible-java8-oracle.git
+#   scm: git
+#   version: master
+- src: malk.java8-oracle  
 
 - src: wtanaka.gcloud-sdk

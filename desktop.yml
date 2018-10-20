@@ -26,7 +26,8 @@
     - andrewrothstein.terraform
     - andrewrothstein.kubectl
     - andrewrothstein.minikube
-    - andrewrothstein.virtualbox
+      #    - andrewrothstein.virtualbox
+    - keyboardinterrupt.sublime-text-3
 #     - zoom
 # #     - logstash
 #     - sssd-ad

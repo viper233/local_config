@@ -1,9 +1,0 @@
----
-- name: Extract and install Packer
-  unarchive: 
-    src: https://releases.hashicorp.com/packer/{{ packer_version }}/packer_{{ packer_version }}_linux_amd64.zip
-    dest: /usr/local/bin
-    copy: no
-    validate_certs: False
-    # soon to be (in 2.2)
-    # remote_src: yes
