@@ -8,9 +8,11 @@
     - ntp_timezone: "US/Pacific"
     - vault_app: vault
     - vault_app_ver: '0.10.1'
+    - vagrant_version: '2.2.0'
     - vault_app_checksums:
         linux_amd64: 031e521b4603487126fd353a9557dd22a02304a8a11f843e9914be59a8009c8a  
-    - virtualbox_version : 5.2.12
+    - virtualbox_version : 5.2.20
+    - ubuntu_version: cosmic
 
 
   roles:
@@ -27,20 +29,13 @@
     - andrewrothstein.kubectl
     - andrewrothstein.minikube
       #    - andrewrothstein.virtualbox
-    - keyboardinterrupt.sublime-text-3
+      #     - keyboardinterrupt.sublime-text-3
 #     - zoom
-# #     - logstash
-#     - sssd-ad
 #     - webex #needs work
 #     - keepass
-#     - igor_mukhin.clamav 
     - telusdigital.ntp
-#     - pulse_client
-#     - minikube
-#     - docker_machine_kvm
     - dosullivan.kops
     - cmprescott.chrome
-#    - suzuki-shunsuke.gcloud-ubuntu
     - willshersystems.sshd
     - geerlingguy.docker
     - geerlingguy.ansible

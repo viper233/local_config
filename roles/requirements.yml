@@ -34,4 +34,4 @@
 #   version: master
 - src: malk.java8-oracle  
 
-- src: wtanaka.gcloud-sdk
+- src: wtanaka.gcloud_sdk
