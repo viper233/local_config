@@ -12,6 +12,7 @@
 - src: dosullivan.kops
 - src: andrewrothstein.kubectl
 - src: andrewrothstein.minikube
+- src: andrewrothstein.calicoctl
 
 - src: andrewrothstein.terraform
 - src: andrewrothstein.packer

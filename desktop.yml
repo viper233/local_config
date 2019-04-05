@@ -23,11 +23,12 @@
 #     - nvidia
 #     - aws
 #     - andrewrothstein.vault-app #failing
-    - andrewrothstein.vagrant
-    - andrewrothstein.packer
-    - andrewrothstein.terraform
-    - andrewrothstein.kubectl
-    - andrewrothstein.minikube
+#     - andrewrothstein.vagrant
+#     - andrewrothstein.packer
+#     - andrewrothstein.terraform
+#     - andrewrothstein.kubectl
+#     - andrewrothstein.minikube
+    - andrewrothstein.calicoctl
       #    - andrewrothstein.virtualbox
       #     - keyboardinterrupt.sublime-text-3
 #     - zoom
